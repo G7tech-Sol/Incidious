@@ -8,6 +8,7 @@ const authentication = require ('./routes/authentication')(router);
 const blogs = require ('./routes/blogs')(router);
 const bodyParser = require('body-parser');
 const cors =require('cors');
+var port = process.env.PORT || 3000;
 
 app.use(cors({
   origin : 'http://localhost:4200'
@@ -28,6 +29,6 @@ app.use('/blogs', blogs);
 app.get('*' , (req , res)=>{
   res.sendFile(path.join( __dirname + '/public/index.html'));
 });
-app.listen(3000 , () =>{
-  console.log('You are listening to port 3000');
+app.listen(port , () =>{
+  console.log('You are listening to port ', port);
 });
