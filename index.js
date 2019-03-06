@@ -14,14 +14,8 @@ app.use(cors({
 }));
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.uri , (err) =>{
-  if (err){
-    console.log('could not connect to the database' , err);
-  }
-  else {
-    console.log('successfully connected to the database' , config.db);
-  }
-} );
+mongoose.connect('mongodb://popo:popo123@ds161345.mlab.com:61345/incidiousdb', { useMongoClient: true }); // database conneciton to azure pro database
+mongoose.connection.once('connected', () => console.log('Connected to database'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
