@@ -12,7 +12,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notauth.guard'
 
 const appRoutes :Routes = [
-   { path:'home', component: HomeComponent } ,
+   { path:'', component: HomeComponent } ,
    { path:'dashboard', component: DashboardComponent, canActivate : [AuthGuard]},
    { path:'profile', component: ProfileComponent ,  canActivate : [AuthGuard]},
    { path:'blog', component: BlogComponent, canActivate : [AuthGuard] },
