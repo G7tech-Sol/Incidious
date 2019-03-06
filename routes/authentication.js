@@ -40,7 +40,7 @@ router.post('/register', (req, res) => {
                 }
                      }
           } else {
-              res.json({ success : true , message : " Congratulations User is fucking saved"});
+              res.json({ success : true , message : " Congratulations User is Now registered"});
             }
           });
         }
