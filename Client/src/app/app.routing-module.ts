@@ -19,7 +19,7 @@ const appRoutes :Routes = [
    { path:'editblog/:id', component: EditblogComponent , canActivate: [AuthGuard] },
    { path:'contact', component: ContactComponent },
    { path:'signup', component: SignupComponent, canActivate :[NotAuthGuard] },
-   { path:'signin', component: SigninComponent }
+   { path:'signin', component: SigninComponent,canActivate:[NotAuthGuard] }
 ];
 
 @NgModule({
